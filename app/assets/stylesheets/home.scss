@@ -1,0 +1,91 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+body {
+  display: flex;
+  min-height: 100vh;
+  margin: 0px 80px;
+}
+
+.header-logo {
+  padding-bottom: 20px;
+  font-size: 20px;
+  font-weight: bold;
+  margin: 30px;
+}
+
+.header-menus {
+  font-size: 15px;
+  flex-direction: column;
+  display: flex;
+  text-align: left;
+}
+
+ul, li {
+  list-style-type: none;
+  padding: 0px;
+  margin: 20px;
+}
+
+.header {
+  flex: 1;
+  padding: 20px;
+  background-color: rgb(250, 211, 180);
+}
+
+//フォローユーザーの投稿一覧
+
+.main {
+  flex: 2;
+  text-align: center;
+  margin-left: 10px;
+  background-color: rgb(241, 236, 225);
+}
+
+.posts-index-item {
+  padding: 20px 20px;
+  background-color: rgb(247, 225, 155);
+  box-shadow: 0 2px 6px #c1ced7;
+  overflow: hidden;
+  margin: 10px;
+}
+
+.post-left {
+  float: left;
+  width: 10%;
+}
+
+.post-left img {
+  width: 50px;
+  height: 50px;
+  border-radius: 30%;
+  box-shadow: 0 2px 6px #c1ced7;
+  object-fit: cover;
+}
+
+.post-right {
+  float: left;
+  width: 70%;
+  padding-left: 25px;
+  text-align: left;
+}
+
+//ランキング
+
+.ranking {
+  flex: 2;
+  text-align: center;
+  margin-left: 10px;
+  background-color: rgb(241, 236, 225);
+}
+
+//Exposerについて
+.about-main {
+  margin: 0px 80px;
+  width: 800px;
+}
+
+.about-img {
+  background-size: cover;
+  width: 100%;
+}

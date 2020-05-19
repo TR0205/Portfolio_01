@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Exposer</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  </head>
+  <body>
+    <div class="header">
+      <div class="header-logo">Exposer</div>
+        <ul class="header-menus">
+          <li>ホーム</li>
+          <li>プロフィール</li>
+          <li>ブックマーク</li>
+          <li>Expose</li>
+          <li>ログアウト</li>
+          <li>Exposeについて</li>
+          <li>新規登録</li>
+          <li>ログイン</li>
+        </ul>
+    </div>
+    <div class="main">
+      <%= yield %>
+    </div>
+    <div class="ranking">
+      <h1>人気の投稿</h1>
+      <div class="main posts-index">
+        <div class="container">
+          <div class="posts-index-item">
+            <div class="post-left">
+              <img src="/tenryuu.jpg">
+            </div>
+            <div class="post-right">
+              <p>username1</p>
+              <p>投稿内容</p>
+            </div>
+          </div>
+
+          <div class="posts-index-item">
+            <div class="post-left">
+              <img src="/tenryuu.jpg">
+            </div>
+            <div class="post-right">
+              <p>username1</p>
+              <p>投稿内容</p>
+            </div>
+          </div>
+
+        </div>
+
+    </div>
+  </body>
+</html>
