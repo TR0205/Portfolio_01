@@ -17,14 +17,22 @@
     <div class="header">
       <div class="header-logo">Exposer</div>
         <ul class="header-menus">
-          <li>ホーム</li>
+          <li>
+            <%= link_to("ホーム", "/top") %>
+          </li>
           <li>プロフィール</li>
           <li>ブックマーク</li>
-          <li>Expose</li>
+          <li>
+            <%= link_to("Expose", "/posts/new") %>
+          </li>
           <li>ログアウト</li>
-          <li>Exposeについて</li>
+          <li>
+            <%= link_to("Exposeについて", "/about") %>
+          </li>
           <li>新規登録</li>
-          <li>ログイン</li>
+          <li>
+            <%= link_to("ログイン", "/login") %>
+          </li>
         </ul>
     </div>
     <div class="main">
@@ -40,7 +48,7 @@
             </div>
             <div class="post-right">
               <p>username1</p>
-              <p>投稿内容</p>
+              <p>今日は朝から動画を見て勇気をもらった。自分がやりたいことをやる！</p>
             </div>
           </div>
 

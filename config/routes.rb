@@ -4,4 +4,10 @@ Rails.application.routes.draw do
   get "login" => "user#login_form"
 
   get "about" => "home#about"
+
+  get "posts/new" => "posts#new"
+
+  get "users/show" => "users#show"
+
+  get "bookmark" => "users#like"
 end
