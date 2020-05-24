@@ -18,9 +18,11 @@
       <div class="header-logo">Exposer</div>
         <ul class="header-menus">
           <li>
-            <%= link_to("ホーム", "/top") %>
+            <%= link_to("ホーム", "/") %>
           </li>
-          <li>プロフィール</li>
+          <li>
+            <%= link_to("プロフィール", "/users/show") %>
+          </li>
           <li>ブックマーク</li>
           <li>
             <%= link_to("Expose", "/posts/new") %>
@@ -29,41 +31,46 @@
           <li>
             <%= link_to("Exposeについて", "/about") %>
           </li>
-          <li>新規登録</li>
+          <li>
+            <%= link_to("新規登録", "/signup") %>
+          </li>
           <li>
             <%= link_to("ログイン", "/login") %>
           </li>
         </ul>
     </div>
-    <div class="main">
-      <%= yield %>
-    </div>
-    <div class="ranking">
-      <h1>人気の投稿</h1>
-      <div class="main posts-index">
-        <div class="container">
-          <div class="posts-index-item">
-            <div class="post-left">
-              <img src="/tenryuu.jpg">
-            </div>
-            <div class="post-right">
-              <p>username1</p>
-              <p>今日は朝から動画を見て勇気をもらった。自分がやりたいことをやる！</p>
-            </div>
+  <div class="main">
+    <% if flash[:notice] %>
+      <div class="flash">
+        <%= flash[:notice] %>
+      </div>
+      <% end %>
+    <%= yield %>
+  </div>
+  <div class="ranking">
+    <h1>人気の投稿</h1>
+    <div class="main posts-index">
+      <div class="container">
+        <div class="posts-index-item">
+          <div class="post-left">
+            <img src="/tenryuu.jpg">
           </div>
-
-          <div class="posts-index-item">
-            <div class="post-left">
-              <img src="/tenryuu.jpg">
-            </div>
-            <div class="post-right">
-              <p>username1</p>
-              <p>投稿内容</p>
-            </div>
+          <div class="post-right">
+            <p>username1</p>
+            <p>今日は朝から動画を見て勇気をもらった。自分がやりたいことをやる！</p>
           </div>
-
         </div>
-
+        <div class="posts-index-item">
+          <div class="post-left">
+            <img src="/tenryuu.jpg">
+          </div>
+          <div class="post-right">
+            <p>username1</p>
+            <p>投稿内容</p>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
   </body>
 </html>

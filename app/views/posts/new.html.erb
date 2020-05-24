@@ -1,27 +1,17 @@
 <div class="main form-new">
   <div class="container">
-    <div class="form">
-      <h1>投稿する</h1>
-      <div class="form-top">
-        <div class="form-error">
-        </div>
-      </div>
-      <div class="form-body">
-        <div class="form-left">
-          <div class="form-img">
-            <img src="/tenryuu.jpg" alt="てんりゅう">
-          </div>
-        </div>
-
-        <div class="form-right">
-          <div class="user.name">
+    <h1 class="form-heading">投稿する</h1>
+      <%= form_tag("/posts/create") do %>
+        <div class="form">
+          <div class="form-body">
+              <div class="form-error">
+              </div>
             <textarea name="content" rows="8" cols="35"></textarea>
-          </div>
-          <div class="button">
+            <div class="button">
             <input class="button" type="submit" value="Expose!">
           </div>
         </div>
-      </div>
+      <% end %>
     </div>
   </div>
 </div>
