@@ -3,6 +3,9 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.5'
 
+#パスワード
+gem 'bcrypt'
+
 #エラーメッセージ日本語化
 gem 'rails-i18n'
 

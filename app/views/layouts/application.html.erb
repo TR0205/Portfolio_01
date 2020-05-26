@@ -22,7 +22,7 @@
             <%= link_to("ホーム", "/") %>
           </li>
           <li>
-            <%= link_to("プロフィール", "/users/show") %>
+            <%= link_to("プロフィール", "/users/#{@current_user.id}") %>
           </li>
           <li>ブックマーク</li>
           <li>
