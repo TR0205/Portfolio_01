@@ -4,9 +4,10 @@ ja:
       post: ポスト
     attributes:
       post:
-        name: イベント名
-        place: 開催場所
         content: 変更内容
+      user:
+        name: ユーザー名
+        email: メールアドレス
   date:
     abbr_day_names:
     - 日

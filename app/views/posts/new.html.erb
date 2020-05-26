@@ -1,17 +1,18 @@
 <div class="main form-new">
   <div class="container">
     <h1 class="form-heading">投稿する</h1>
-      <%= form_tag("/posts/create") do %>
-        <div class="form">
-          <div class="form-body">
-              <div class="form-error">
-              </div>
-            <textarea name="content" rows="8" cols="35"></textarea>
-            <div class="button">
-            <input class="button" type="submit" value="Expose!">
-          </div>
+    <%= form_tag("/posts/create") do %>
+      <div class="form">
+        <div class="form-body">
+          <% @post.errors.full_messages.each do |message| %>
+            <div class="form-error">
+              <%= message %>
+            </div>
+          <% end %>
+          <textarea name="content" rows="8" cols="35"><%= @post.content %></textarea>
+          <input class="button" type="submit" value="Expose!">
         </div>
-      <% end %>
-    </div>
+      </div>
+    <% end %>
   </div>
 </div>

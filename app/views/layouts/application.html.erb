@@ -17,6 +17,7 @@
     <div class="header">
       <div class="header-logo">Exposer</div>
         <ul class="header-menus">
+          <% if session[:user_id] %>
           <li>
             <%= link_to("ホーム", "/") %>
           </li>
@@ -27,7 +28,13 @@
           <li>
             <%= link_to("Expose", "/posts/new") %>
           </li>
-          <li>ログアウト</li>
+          <li>
+            <%= link_to("ユーザー一覧", "/users/index") %>
+          </li>
+          <li>
+            <%= link_to("ログアウト", "/logout", {method: :post}) %>
+          </li>
+          <% else %>
           <li>
             <%= link_to("Exposeについて", "/about") %>
           </li>
@@ -37,6 +44,7 @@
           <li>
             <%= link_to("ログイン", "/login") %>
           </li>
+          <% end %>
         </ul>
     </div>
   <div class="main">

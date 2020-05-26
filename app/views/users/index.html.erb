@@ -1,2 +1,16 @@
-<h1>Users#index</h1>
-<p>Find me in app/views/users/index.html.erb</p>
+<div class="main users-index">
+  <div class="container">
+    <% @users.each do |user| %>
+      <div class="users-index-item">
+        <%= link_to(user.name, "/users/#{user.id}")%>
+        <div class="user-left">
+          <img src="<%= "/user_images/#{user.image_name}" %>">
+        </div>
+        <div class="user-right">
+          <div class="username">
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
