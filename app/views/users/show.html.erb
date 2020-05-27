@@ -1,15 +1,25 @@
-<h1>ユーザー詳細</h1>
+<h2 class="main-logo">プロフィール</h2>
 
 <div class="main user-show">
   <div class="container">
     <div class="user">
-      <img src="<%= "/user_images/#{@user.image_name}" %>">
-      <h2><%= @user.name %></h2>
-      <p><%= @user.email %></p>
-      <!-- 紹介文user_text(あとで追加、カラム追加済) -->
-      <% if @user.id == @current_user.id %>
-        <%= link_to("編集", "/users/#{@user.id}/edit") %>
-      <% end %>
+      <div class="user-info">
+        <div class="user-left">
+          <img src="<%= "/user_images/#{@user.image_name}" %>">
+        </div>
+        <div class="user-right">
+          <h2><%= @user.name %></h2>
+          <p><%= @user.email %></p>
+        </div>
+      </div>
+      <div class="user-text">
+        <!-- 紹介文user_text(あとで追加、カラム追加済) -->
+      </div>
+      <div class="user-info-edit">
+        <% if @user.id == @current_user.id %>
+          <%= link_to("編集", "/users/#{@user.id}/edit") %>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>

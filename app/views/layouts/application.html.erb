@@ -24,19 +24,18 @@
           <li>
             <%= link_to("プロフィール", "/users/#{@current_user.id}") %>
           </li>
-          <li>ブックマーク</li>
           <li>
             <%= link_to("Expose", "/posts/new") %>
           </li>
           <li>
-            <%= link_to("ユーザー一覧", "/users/index") %>
+            <%= link_to("ユーザーリスト", "/users/index") %>
           </li>
           <li>
             <%= link_to("ログアウト", "/logout", {method: :post}) %>
           </li>
           <% else %>
           <li>
-            <%= link_to("Exposeについて", "/about") %>
+            <%= link_to("Exposerについて", "/about") %>
           </li>
           <li>
             <%= link_to("新規登録", "/signup") %>

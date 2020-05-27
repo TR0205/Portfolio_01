@@ -1,15 +1,28 @@
+//共通
+
 body {
   display: flex;
   justify-content: center;
   min-height: 100vh;
   margin: 0px 80px;
   background-color: rgb(241, 236, 225);
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: black;
 }
 
 .header {
   flex: 1;
   padding: 20px;
   white-space: nowrap;
+  text-decoration: none;
+}
+
+.header a:hover {
+  text-decoration: underline;
 }
 
 .header-logo {
@@ -30,6 +43,10 @@ ul, li {
   list-style-type: none;
   padding: 0px;
   margin: 20px;
+}
+
+.main-logo {
+  padding-left: 20px;
 }
 
 //フォローユーザーの投稿一覧
