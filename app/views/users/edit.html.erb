@@ -1,23 +1,26 @@
 <h1 class="main-logo">ユーザー情報編集</h1>
 <div class="main users-edit">
   <div class="container">
-    <div class="form users-form">
-      <div class="form-body">
-        <% @user.errors.full_messages.each do |message| %>
-          <div class="form-error">
-            <%= message %>
-          </div>
-        <% end %>
-        <%= form_tag("/users/#{@user.id}/update", {multipart: true}) do %>
-          <p>ユーザー名</p>
-          <input name="name" value="<%= @user.name %>">
-          <p>メールアドレス</p>
-          <input name="email" value="<%= @user.email%>">
-          <p>画像</p>
-          <input name="image" type="file">
-          <input type="submit" value="保存">
-        <% end %>
+    <div class="form-top">
+      <% @user.errors.full_messages.each do |message| %>
+      <div class="form-error">
+        <%= message %>
       </div>
+      <% end %>
+    </div>
+    <div class="users-edit-body">
+      <%= form_tag("/users/#{@user.id}/update", {multipart: true}) do %>
+        <p>ユーザー名</p>
+        <input name="name" value="<%= @user.name %>">
+        <p>メールアドレス</p>
+        <input name="email" value="<%= @user.email%>">
+        <p>画像</p>
+        <input name="image" type="file">
+        <p>紹介文</p>
+      <% end %>
+    </div>
+    <div class="users-edit-bottom">
+      <input class="button" type="submit" value="保存">
     </div>
   </div>
 </div>

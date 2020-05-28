@@ -92,3 +92,21 @@
 }
 
 /* users/edit ================================ */
+.users-edit {
+  display: flex;
+  flex-direction: column;
+  min-height: 280px;
+  position: relative;
+}
+
+.users-edit-body input, textarea {
+  width: 100%;
+  border: none;
+  border-radius: 0.3rem;
+  background-color: rgb(212, 182, 164);
+  margin-bottom: 20px;
+}
+
+.users-edit-body p {
+  font-weight: bold;
+}
