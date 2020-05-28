@@ -9,9 +9,27 @@ body {
   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
 }
 
-a {
+.header a {
   text-decoration: none;
   color: black;
+  position: relative;
+  display: inline-block;
+}
+
+.header a::after {
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  content: '';
+  width: 100%;
+  height: 2px;
+  background: #333;
+  transform: scale(0, 1);
+  transform-origin: left top;
+  transition: transform .3s;
+}
+.header a:hover::after {
+  transform: scale(1, 1);
 }
 
 .header {
@@ -21,15 +39,10 @@ a {
   text-decoration: none;
 }
 
-.header a:hover {
-  text-decoration: underline;
-}
-
 .header-logo {
-  padding-bottom: 20px;
   font-size: 20px;
   font-weight: bold;
-  margin: 30px;
+  margin: 30px 30px 50px 30px;
 }
 
 .header-menus {
@@ -37,23 +50,25 @@ a {
   flex-direction: column;
   display: flex;
   text-align: left;
+
 }
 
-ul, li {
+.header-menus　ul, li {
   list-style-type: none;
-  padding: 0px;
-  margin: 20px;
+  margin: 30px;
 }
 
 .main-logo {
-  padding-left: 20px;
+  margin: 20px;
+  font-size: 20px;
 }
 
 //フォローユーザーの投稿一覧
 
 .main {
   flex: 2;
-  margin-left: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
   background-color: rgb(250, 211, 180);
 }
 

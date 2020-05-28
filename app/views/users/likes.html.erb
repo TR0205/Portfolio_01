@@ -1,34 +1,51 @@
+<h1 class="main-logo">プロフィール</h1>
+<div class="main user-show">
   <div class="container">
     <div class="user">
-      <img src="<%= "/user_images/#{@user.image_name}" %>">
-      <h2><%= @user.name %></h2>
-      <p><%= @user.email %></p>
-      <!-- 紹介文user_text(あとで追加、カラム追加済) -->
-      <% if @user.id == @current_user.id %>
-        <%= link_to("編集", "/users/#{@user.id}/edit") %>
-      <% end %>
+      <div class="user-info">
+        <div class="user-left">
+          <img src="<%= "/user_images/#{@user.image_name}" %>">
+        </div>
+        <div class="user-right">
+          <h2><%= @user.name %></h2>
+          <p><%= @user.email %></p>
+        </div>
+      </div>
+      <div class="user-text">
+        <!-- 紹介文user_text(あとで追加、カラム追加済) -->
+      </div>
+      <div class="user-info-edit">
+        <% if @user.id == @current_user.id %>
+          <%= link_to("編集", "/users/#{@user.id}/edit") %>
+        <% end %>
+      </div>
     </div>
   </div>
 
-  <ul class="user-tabs">
-    <li><%= link_to("投稿", "/users/#{@user.id}") %></li>
-    <li class="active"><%= link_to("いいね!", "/users/#{@user.id}/likes") %></li>
-  </ul>
-  <!-- <li><%= link_to("フォロー", "/users/#{@user.id}/likes") %></li> -->
-  <!-- <li><%= link_to("フォロワー", "/users/#{@user.id}/likes") %></li> -->
+  <div class="user-tabs">
+    <div class="tabs">
 
-  <% @likes.each do |like| %>
-    <% post = Post.find_by(id: like.post_id) %>
+      <li><%= link_to("投稿", "/users/#{@user.id}") %></li>
+      <li class="active"><%= link_to("いいね!", "/users/#{@user.id}/likes") %></li>
 
-    <div class="posts-index-item">
-      <div class="post-left">
-        <img src="<%= "/user_images/#{post.user.image_name}" %>">
-      </div>
-      <div class="post-right">
-        <div class="post-user-name">
-          <%= link_to(post.user.name, "/users/#{post.user.id}") %>
-        </div>
-        <%= link_to(post.content, "/posts/#{post.id}") %>
-      </div>
+      <!-- <li><%= link_to("フォロー", "/users/#{@user.id}/likes") %></li> -->
+      <!-- <li><%= link_to("フォロワー", "/users/#{@user.id}/likes") %></li> -->
     </div>
-  <% end %>
+
+    <% @likes.each do |like| %>
+      <% post = Post.find_by(id: like.post_id) %>
+
+      <div class="posts-index-item">
+        <div class="post-left">
+          <img src="<%= "/user_images/#{post.user.image_name}" %>">
+        </div>
+        <div class="post-right">
+          <div class="post-user-name">
+            <%= link_to(post.user.name, "/users/#{post.user.id}") %>
+          </div>
+          <%= link_to(post.content, "/posts/#{post.id}") %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

@@ -1,18 +1,27 @@
+<h2 class="main-logo">Expose!</h2>
 <div class="main form-new">
   <div class="container">
-    <h1 class="form-heading">投稿する</h1>
     <%= form_tag("/posts/create") do %>
-      <div class="form">
-        <div class="form-body">
-          <% @post.errors.full_messages.each do |message| %>
-            <div class="form-error">
-              <%= message %>
-            </div>
-          <% end %>
-          <textarea name="content" rows="8" cols="35"><%= @post.content %></textarea>
-          <input class="button" type="submit" value="Expose!">
+    <div class="form-new">
+      <div class="form-top">
+      <% @post.errors.full_messages.each do |message| %>
+        <div class="form-error">
+          <%= message %>
+        </div>
+      <% end %>
+      </div>
+      <div class="form-new-body">
+        <div class="form-new-left">
+          <img src="<%= "/user_images/#{@current_user.image_name}" %>" alt="ユーザー画像">
+        </div>
+        <div class="form-new-right">
+        <textarea name="content" rows="8" ><%= @post.content %></textarea>
         </div>
       </div>
+      <div class="form-new-bottom">
+        <input class="button" type="submit" value="Expose!">
+      </div>
     <% end %>
+    </div>
   </div>
 </div>

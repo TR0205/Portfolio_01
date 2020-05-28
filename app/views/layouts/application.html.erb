@@ -16,44 +16,44 @@
   <body>
     <div class="header">
       <div class="header-logo">Exposer</div>
-        <ul class="header-menus">
-          <% if session[:user_id] %>
-          <li>
-            <%= link_to("ホーム", "/") %>
-          </li>
-          <li>
-            <%= link_to("プロフィール", "/users/#{@current_user.id}") %>
-          </li>
-          <li>
-            <%= link_to("Expose", "/posts/new") %>
-          </li>
-          <li>
-            <%= link_to("ユーザーリスト", "/users/index") %>
-          </li>
-          <li>
-            <%= link_to("ログアウト", "/logout", {method: :post}) %>
-          </li>
-          <% else %>
-          <li>
-            <%= link_to("Exposerについて", "/about") %>
-          </li>
-          <li>
-            <%= link_to("新規登録", "/signup") %>
-          </li>
-          <li>
-            <%= link_to("ログイン", "/login") %>
-          </li>
-          <% end %>
-        </ul>
+      <ul class="header-menus">
+        <% if session[:user_id] %>
+        <li>
+          <%= link_to("ホーム", "/") %>
+        </li>
+        <li>
+          <%= link_to("プロフィール", "/users/#{@current_user.id}") %>
+        </li>
+        <li>
+          <%= link_to("Expose!", "/posts/new") %>
+        </li>
+        <li>
+          <%= link_to("ユーザーリスト", "/users/index") %>
+        </li>
+        <li>
+          <%= link_to("ログアウト", "/logout", {method: :post}) %>
+        </li>
+        <% else %>
+        <li>
+          <%= link_to("Exposerについて", "/about") %>
+        </li>
+        <li>
+          <%= link_to("新規登録", "/signup") %>
+        </li>
+        <li>
+          <%= link_to("ログイン", "/login") %>
+        </li>
+        <% end %>
+      </ul>
     </div>
-  <div class="main">
-    <% if flash[:notice] %>
-      <div class="flash">
-        <%= flash[:notice] %>
-      </div>
-      <% end %>
-    <%= yield %>
-  </div>
+  　<div class="main">
+  　  <% if flash[:notice] %>
+  　    <div class="flash">
+  　      <%= flash[:notice] %>
+  　    </div>
+  　    <% end %>
+  　  <%= yield %>
+  　</div>
   <div class="ranking">
     <h1>人気の投稿</h1>
     <div class="main posts-index">

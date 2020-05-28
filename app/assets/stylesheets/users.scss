@@ -9,6 +9,11 @@
 
 /* users/show ================================ */
 
+.user-show a {
+  text-decoration: none;
+  color: black;
+}
+
 .user {
   display: flex;
   flex-direction: column;
@@ -22,7 +27,7 @@
 
 .user-left {
   width: 80px;
-  margin-right: 10px;
+  margin-right: 20px;
 }
 
 .user-right h2 {
@@ -33,6 +38,7 @@
 
 .user-right p {
   font-size: 15px;
+  margin-top: 10px;
 }
 
 .user img {
@@ -54,3 +60,35 @@
   right: 10%;
   position: absolute;
 }
+
+.user-info-edit:hover {
+  font-weight: bold;
+
+}
+
+.user-tabs {
+  margin-top: 40px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.tabs {
+  display: flex;
+  border-bottom: 1px solid black;
+}
+
+.tabs li {
+  display: block;
+
+}
+
+.tabs li:hover {
+  font-weight: bold;
+}
+
+.active {
+  font-weight: bold;
+}
+
+/* users/edit ================================ */

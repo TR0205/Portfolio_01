@@ -1,6 +1,6 @@
+<h1 class="main-logo">ユーザー情報編集</h1>
 <div class="main users-edit">
   <div class="container">
-    <div class="form-heading">アカウント編集</div>
     <div class="form users-form">
       <div class="form-body">
         <% @user.errors.full_messages.each do |message| %>
@@ -8,7 +8,6 @@
             <%= message %>
           </div>
         <% end %>
-
         <%= form_tag("/users/#{@user.id}/update", {multipart: true}) do %>
           <p>ユーザー名</p>
           <input name="name" value="<%= @user.name %>">
