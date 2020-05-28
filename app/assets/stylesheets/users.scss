@@ -110,3 +110,33 @@
 .users-edit-body p {
   font-weight: bold;
 }
+
+/* users/login_form  ================================ */
+.users-login {
+  display: flex;
+  flex-direction: column;
+  min-height: 280px;
+  position: relative;
+}
+
+.users-login-body {
+  text-align: center;
+}
+
+.users-login-body input, textarea {
+  width: 70%;
+  border: none;
+  border-radius: 0.3rem;
+  background-color: rgb(212, 182, 164);
+  margin-bottom: 20px
+}
+
+.users-login-body p {
+  font-weight: bold;
+}
+
+.users-login-bottom {
+  position: absolute;
+  right: 20px;
+  bottom: 100px;
+}
