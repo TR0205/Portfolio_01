@@ -20,6 +20,7 @@
   display: flex;
   margin: 0px 10px;
   min-height: 200px;
+  position: relative;
 }
 
 .form-new-left img {
@@ -52,7 +53,6 @@
 .button {
   width: 90px;
   border-radius: 20px;
-  font-family: "Hiragino Kaku Gothic ProN","メイリオ";
   background-color: rgb(212, 182, 164);
   font-size: 15px;
   text-align: center;
@@ -75,4 +75,30 @@
   box-shadow: 0 2px 6px #c1ced7;
   vertical-align: middle;
   object-fit: cover;
+}
+
+/* posts/edit */
+.posts-edit-form {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(241, 236, 225);
+  min-height: 250px;
+  position: relative;
+}
+
+.posts-edit-body {
+  margin: 0px 10px;
+  min-height: 160px;
+  position: relative;
+}
+
+.posts-edit-body textarea {
+  position: absolute;
+  width: 90%;
+  font-size: 15px;
+  margin: 10px;
+  min-height: 140px;
+  background-color: rgb(241, 236, 225);
+  border: 1px solid rgb(216, 218, 223);
+  resize: none;
 }
