@@ -45,38 +45,21 @@
         <% end %>
       </ul>
     </div>
-  　<div class="main">
-  　  <% if flash[:notice] %>
-  　    <div class="flash">
-  　      <%= flash[:notice] %>
-  　    </div>
-  　    <% end %>
-  　  <%= yield %>
-  　</div>
-  <div class="ranking">
-    <h2 class="main-logo">人気の投稿</h2>
-    <div class="main posts-index">
-      <div class="container">
-        <div class="posts-index-item">
-          <div class="post-left">
-            <img src="/tenryuu.jpg">
-          </div>
-          <div class="post-right">
-            <p>username1</p>
-            <p>今日は朝から動画を見て勇気をもらった。自分がやりたいことをやる！</p>
-          </div>
-        </div>
-        <div class="posts-index-item">
-          <div class="post-left">
-            <img src="/tenryuu.jpg">
-          </div>
-          <div class="post-right">
-            <p>username1</p>
-            <p>投稿内容</p>
-          </div>
+    <div class="main">
+      <% if flash[:notice] %>
+    　  <div class="flash">
+    　    <%= flash[:notice] %>
+    　  </div>
+    　<% end %>
+    　<%= yield %>
+    </div>
+    <div class="ranking">
+      <h2 class="main-logo">人気の投稿</h2>
+      <div class="main posts-index">
+        <div class="container">
+
         </div>
       </div>
     </div>
-  </div>
   </body>
 </html>

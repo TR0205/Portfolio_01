@@ -25,5 +25,6 @@ Rails.application.routes.draw do
   get "users/:id/likes" => "users#likes"
   get "bookmark" => "users#like"
 
-  get "otameshi" => "posts#otameshi"
+  get "try" => "posts#try"
+
 end

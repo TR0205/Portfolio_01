@@ -58,8 +58,8 @@ class PostsController < ApplicationController
     end
   end
 
-  def otameshi
+  def try
+    @all_ranks = Post.find(Like.group(:post_id).order('count(post_id) desc').limit(2).pluck(:post_id))
   end
-
 
 end
