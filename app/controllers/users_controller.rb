@@ -43,10 +43,19 @@ class UsersController < ApplicationController
     @user = User.find_by(id: params[:id])
     @user.name = params[:name]
     @user.email = params[:email]
+    @user.user_text.nil?
     if params[:image]
       @user.image_name = "#{@user.id}.jpg"
       image = params[:image]
       File.binwrite("public/user_images/#{@user.image_name}", image.read)
+    end
+
+    if @user.user_text = nil
+      @user = User.new(
+        user_text: params[:user_text]
+      )
+    else
+      @user.user_text = params[:user_text]
     end
 
     if @user.save
