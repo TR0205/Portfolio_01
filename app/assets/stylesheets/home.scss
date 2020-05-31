@@ -50,7 +50,6 @@ body {
   flex-direction: column;
   display: flex;
   text-align: left;
-
 }
 
 .header-menus　ul, li {
@@ -63,6 +62,11 @@ body {
   font-size: 20px;
 }
 
+.flash {
+  background-color: rgb(247, 225, 155);
+  font-weight: bold;
+}
+
 //フォローユーザーの投稿一覧
 
 .main {
@@ -72,43 +76,10 @@ body {
   background-color: rgb(250, 211, 180);
 }
 
-.posts-index-item {
-  padding: 20px 20px;
-  margin: 10px;
-  background-color: rgb(241, 236, 225);
-  box-shadow: 0 2px 6px #c1ced7;
-  overflow: hidden;
-  display: flex;
-}
-
-.post-left {
-  width: 20px;
-  margin-right: 10px;
-  top: 10px;
-  left: 10px;
-}
-
-.post-left img {
-  width: 50px;
-  height: 50px;
-  border-radius: 30%;
-  box-shadow: 0 2px 6px #c1ced7;
-  object-fit: cover;
-}
-
-.post-right {
-  float: left;
-  width: 70%;
-  padding-left: 25px;
-  text-align: left;
-  flex-direction: column;
-}
-
 //ランキング
 
 .ranking {
   flex: 2;
-  text-align: center;
   margin-left: 10px;
   background-color: rgb(250, 211, 180);
 }

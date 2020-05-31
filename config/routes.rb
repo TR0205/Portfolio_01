@@ -24,4 +24,6 @@ Rails.application.routes.draw do
   post "likes/:post_id/destroy" => "likes#destroy"
   get "users/:id/likes" => "users#likes"
   get "bookmark" => "users#like"
+
+  get "otameshi" => "posts#otameshi"
 end
