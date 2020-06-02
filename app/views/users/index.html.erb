@@ -7,7 +7,13 @@
           <img src="<%= "/user_images/#{user.image_name}" %>">
         </div>
         <div class="users-index-right">
-          <%= link_to(user.name, "/users/#{user.id}")%>
+          <div class="users-index-name">
+            <%= link_to(user.name, "/users/#{user.id}")%>
+          </div>
+          <div class="users-index-text">
+            <% User.find_by(id: user.id) %>
+            <%= user.user_text %>
+          </div>
         </div>
       </div>
     <% end %>

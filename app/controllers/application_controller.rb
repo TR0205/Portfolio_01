@@ -1,9 +1,14 @@
 class ApplicationController < ActionController::Base
 
   before_action :set_current_user
+  before_action :set_all_ranks
 
   def set_current_user
     @current_user = User.find_by(id: session[:user_id])
+  end
+
+  def set_all_ranks
+    @all_ranks = Post.find(Like.group(:post_id).order('count(post_id) desc').limit(2).pluck(:post_id))
   end
 
   def authenticate_user
@@ -19,9 +24,4 @@ class ApplicationController < ActionController::Base
       redirect_to("/posts/index")
     end
   end
-
-  def rank
-    @all_ranks = Post.find(Like.group(:post_id).order('count(post_id) desc').limit(3).pluck(:post_id))
-  end
-  
 end

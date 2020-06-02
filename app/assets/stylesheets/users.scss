@@ -16,8 +16,7 @@
 
 .users-index-left {
   width: 70px;
-
-
+  margin-right: 10px;
 }
 
 .users-index-left img {
@@ -32,7 +31,6 @@
   text-decoration: underline;
 }
 
-
 /* users/show ================================ */
 
 .user-show a {
@@ -44,7 +42,6 @@
   display: flex;
   flex-direction: column;
   position: relative;
-  min-height: 160px;
 }
 
 .user-info {
@@ -75,6 +72,12 @@
   object-fit: cover;
 }
 
+.user-text {
+  padding: 5px;
+  margin: 5px;
+  min-height: 30px;
+}
+
 .user-info-edit {
   width: 80px;
   border-radius: 20px;
@@ -82,9 +85,7 @@
   font-size: 15px;
   text-align: center;
   cursor: pointer;
-  bottom: 10px;
-  right: 10%;
-  position: absolute;
+  margin-left: 70%;
 }
 
 .user-info-edit:hover {
@@ -119,11 +120,14 @@
 .users-edit {
   display: flex;
   flex-direction: column;
-  min-height: 280px;
   position: relative;
 }
 
-.users-edit-body input, textarea {
+.users-edit-body {
+  height: 380px;
+}
+
+.users-edit-body input {
   width: 100%;
   border: none;
   border-radius: 0.3rem;
@@ -131,8 +135,33 @@
   margin-bottom: 20px;
 }
 
+.users-edit-body textarea {
+  width: 100%;
+  min-height: 140px;
+  background-color: rgb(212, 182, 164);
+  resize: none;
+}
+
 .users-edit-body p {
   font-weight: bold;
+}
+
+.users-edit-bottom {
+  position: relative;
+  min-height: 30px;
+  margin: 10px;
+}
+
+.user-edit-button {
+  width: 90px;
+  border-radius: 20px;
+  background-color: rgb(212, 182, 164);
+  font-size: 15px;
+  text-align: center;
+  cursor: pointer;
+  position: absolute;
+  right: 10px;
+  bottom: 15px;
 }
 
 /* users/login_form  ================================ */
