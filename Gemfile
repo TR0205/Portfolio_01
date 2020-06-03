@@ -6,6 +6,10 @@ ruby '2.6.5'
 #パスワード
 gem 'bcrypt'
 
+#Device
+gem 'devise'
+gem 'omniauth-twitter'
+
 #エラーメッセージ日本語化
 gem 'rails-i18n'
 

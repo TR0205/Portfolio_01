@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   before_action :authenticate_user,{only: [:edit, :update]}
   before_action :forbid_login_user, {only: [:new, :create, :login_form, :login]}
   before_action :ensure_correct_user, {only: [:edit, :update]}
-
+  before_action :check_guest, {only: [:update]}
 
   def index
     @users = User.all.order(created_at: :desc)
@@ -99,11 +99,21 @@ class UsersController < ApplicationController
   end
 
   def new_guest
-    user = User.find_or_create_by(email: 'guest@example.com') do |user|
+    user = User.find_or_create_by(
+      email: "guest@example.com",
+      name: "example_user"
+    ) do |user|
       user.password = SecureRandom.urlsafe_base64
-      # user.confirmed_at = Time.now  # Confirmable を使用している場合は必要
     end
-    sign_in user
-    redirect_to root_path, notice: 'ゲストユーザーとしてログインしました。'
+    session[:user_id] = user.id
+    redirect_to("/")
+  end
+
+  def check_guest
+    user = User.find_by(id: params[:id])
+    if user.email == 'guest@example.com'
+      redirect_to("/")
+      flash[:notice] = "ゲストユーザーの編集はできません"
+    end
   end
 end
