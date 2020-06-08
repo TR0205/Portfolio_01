@@ -6,6 +6,16 @@ ruby '2.6.5'
 #パスワード
 gem 'bcrypt'
 
+#ページネーション
+gem 'kaminari'
+
+# rubocop
+gem 'rubocop', require: false
+
+#エラー
+gem 'better_errors'
+gem 'binding_of_caller'
+
 #Device
 gem 'devise'
 gem 'omniauth-twitter'

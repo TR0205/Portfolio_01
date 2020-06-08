@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   get "about" => "home#about"
 
   get "posts/new" => "posts#new"
@@ -28,4 +29,9 @@ Rails.application.routes.draw do
 
   get "try" => "posts#try"
 
+  resources :users do
+    resource :relationships, only: [:create, :destroy]
+    get :follows, on: :member
+    get :followers, on: :member
+  end
 end

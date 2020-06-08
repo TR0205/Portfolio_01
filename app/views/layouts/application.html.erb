@@ -5,8 +5,7 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 
     <meta charset="utf-8">
 
@@ -43,7 +42,7 @@
           <%= link_to("ログイン", "/login") %>
         </li>
         <% end %>
-      </ul>
+       </ul>
     </div>
     <div class="main">
       <% if flash[:notice] %>
