@@ -12,7 +12,6 @@ Rails.application.routes.draw do
 
   post "users/:id/update" => "users#update"
   get "users/:id/edit" => "users#edit"
-
   post "users/create" => "users#create"
   get "signup" => "users#new"
   get "users/index" => "users#index"
@@ -25,7 +24,6 @@ Rails.application.routes.draw do
   post "likes/:post_id/create" => "likes#create"
   post "likes/:post_id/destroy" => "likes#destroy"
   get "users/:id/likes" => "users#likes"
-  get "bookmark" => "users#like"
 
   get "try" => "posts#try"
 
