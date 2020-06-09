@@ -2,9 +2,9 @@ Rails.application.routes.draw do
 
   get "about" => "home#about"
 
+  get "posts/search" => "posts#search"
   get "posts/new" => "posts#new"
   get "/" => "posts#index"
-  get "posts/search" => "posts#search"
 
   get "posts/:id" => "posts#show"
   post "posts/create" => "posts＃create"

@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   before_action :ensure_correct_user, {only: [:edit, :update, :destroy]}
 
   def index
-    @posts = Post.all.order(created_at: :desc).search(params[:search])
+    @posts = Post.all.order(created_at: :desc)
     @posts_page = Post.page(params[:page]).per(10)
 
   end
@@ -62,5 +62,6 @@ class PostsController < ApplicationController
 
   def search
     @posts = Post.search(params[:search])
+    @posts_page = Post.page(params[:page]).per(10)
   end
 end
