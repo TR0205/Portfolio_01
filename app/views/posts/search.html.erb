@@ -1,0 +1,5 @@
+<h2 class="main-logo">投稿検索</h2>
+<%= form_tag "/", :method => 'get' do %>
+  <%= text_field_tag :search %>
+  <%= submit_tag 'Search', :name => nil %>
+<% end %>

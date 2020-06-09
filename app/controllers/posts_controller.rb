@@ -2,8 +2,9 @@ class PostsController < ApplicationController
   before_action :ensure_correct_user, {only: [:edit, :update, :destroy]}
 
   def index
-    @posts = Post.all.order(created_at: :desc)
+    @posts = Post.all.order(created_at: :desc).search(params[:search])
     @posts_page = Post.page(params[:page]).per(10)
+
   end
 
   def new
@@ -57,5 +58,9 @@ class PostsController < ApplicationController
       flash[:notice] = "権限がありません"
       redirect_to("/posts/index")
     end
+  end
+
+  def search
+    @posts = Post.search(params[:search])
   end
 end
