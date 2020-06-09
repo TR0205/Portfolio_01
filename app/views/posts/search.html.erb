@@ -1,4 +1,12 @@
 <h2 class="main-logo">投稿検索</h2>
+
+<div class="search-tabs">
+  <div class="tabs">
+    <li class="active"><%= link_to("投稿検索", "/posts/search")%></li>
+    <li><%= link_to("ユーザー検索", "/users/search") %></li>
+  </div>
+</div>
+
 <%= form_tag "/", :method => 'get' do %>
   <%= text_field_tag :search %>
   <%= submit_tag 'Search', :name => nil %>

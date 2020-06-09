@@ -1,0 +1,45 @@
+<h2 class="main-logo">ユーザー検索</h2>
+
+<div class="search-tabs">
+  <div class="tabs">
+    <li class="active"><%= link_to("ユーザー検索", "/users/search")%></li>
+    <li><%= link_to("投稿検索", "/posts/search") %></li>
+  </div>
+</div>
+
+<%= form_tag "/users/search", :method => 'get' do %>
+  <%= text_field_tag :search %>
+  <%= submit_tag 'Search', :name => nil %>
+<% end %>
+
+<div class="main users-index">
+  <div class="container">
+    <% @users.each do |user| %>
+      <div class="users-index-item">
+        <div class="users-index-left">
+          <img src="<%= "/user_images/#{user.image_name}" %>">
+        </div>
+        <div class="users-index-right">
+          <div class="users-index-name">
+            <%= link_to(user.name, "/users/#{user.id}")%>
+          </div>
+          <div class="users-index-text">
+            <% User.find_by(id: user.id) %>
+            <%= user.user_text %>
+          </div>
+          <% if @current_user != user %>
+            <% if user.followed_by?(@current_user) %>
+              <%=link_to(user_relationships_path(user.id), method: :delete) do %>
+              <span class="fas fa-check-circle"></span>
+              <% end %>
+            <% else %>
+              <%=link_to(user_relationships_path(user.id), method: :post) do %>
+              <span class="far fa-check-circle"></span>
+              <% end %>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
