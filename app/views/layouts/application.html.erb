@@ -12,35 +12,47 @@
   </head>
   <body>
     <div class="header">
-      <div class="header-logo">Exposer</div>
+      <div class="app-title">
+        <%= embedded_svg("title_icon.svg", class: "good-svg") %>
+        <div class="header-logo">Exposer</div>
+      </div>
       <ul class="header-menus">
         <% if session[:user_id] %>
         <li>
+          <span class="fas fa-home"></span>
           <%= link_to("ホーム", "/") %>
         </li>
         <li>
+          <span class="far fa-address-card"></span>
           <%= link_to("プロフィール", "/users/#{@current_user.id}") %>
         </li>
         <li>
+          <span class="fas fa-volume-up"></span>
           <%= link_to("Expose!", "/posts/new") %>
         </li>
         <li>
+          <span class="fas fa-search"></span>
           <%= link_to("投稿&ユーザー検索","/posts/search")%>
         </li>
         <li>
+          <span class="fas fa-list"></span>
           <%= link_to("ユーザーリスト", "/users/index") %>
         </li>
         <li>
+          <span class="fas fa-sign-out-alt"></span>
           <%= link_to("ログアウト", "/logout", {method: :post}) %>
         </li>
         <% else %>
         <li>
+          <span class="fas fa-info-circle"></span>
           <%= link_to("Exposerについて", "/about") %>
         </li>
         <li>
+          <span class="fas fa-user-plus"></span>
           <%= link_to("新規登録", "/signup") %>
         </li>
         <li>
+          <span class="fas fa-sign-in-alt"></span>
           <%= link_to("ログイン", "/login") %>
         </li>
         <% end %>
