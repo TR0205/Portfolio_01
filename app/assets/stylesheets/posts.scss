@@ -213,3 +213,21 @@
   resize: none;
   white-space: pre;
 }
+
+/* posts/search */
+
+.search-tabs {
+  display: flex;
+}
+
+.search-tabs a {
+  text-decoration: none;
+  color: black;
+  display: block;
+  white-space: nowrap;
+}
+
+.search-tabs a:hover {
+  font-weight: bold;
+}
+

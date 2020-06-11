@@ -1,19 +1,20 @@
 <div class="main posts-index">
   <div class="container">
-    <% @all_ranks.each do |post| %>
-      <div class="posts-index-item">
-        <div class="post-left">
-          <img src="<%= "/user_images/#{post.user.image_name}" %>">
-        </div>
-        <div class="post-right">
-          <div class="post-user-name">
-            <%= link_to(post.user.name, "/users/#{post.user.id}")%>
+    <% if session[:user_id] %>
+      <% @all_ranks.each do |post| %>
+        <div class="posts-index-item">
+          <div class="post-left">
+            <img src="<%= "/user_images/#{post.user.image_name}" %>">
           </div>
-          <div class="post-user-content">
-            <%= simple_format(link_to(post.content, "/posts/#{post.id}")) %>
-          </div>
-          <div class="post-index-bottom">
-            <div class="post-icon">
+          <div class="post-right">
+            <div class="post-user-name">
+              <%= link_to(post.user.name, "/users/#{post.user.id}")%>
+            </div>
+            <div class="post-user-content">
+              <%= simple_format(link_to(post.content, "/posts/#{post.id}")) %>
+            </div>
+            <div class="post-index-bottom">
+              <div class="post-icon">
               <% if Like.find_by(user_id: @current_user.id, post_id: post.id) %>
                 <%= link_to("/likes/#{post.id}/destroy_index", {method: "post"}) do %>
                 <span class="fa fa-heart like-btn-unlike"></span>
@@ -23,13 +24,36 @@
                 <span class="fa fa-heart like-btn"></span>
                 <% end %>
               <% end %>
+              </div>
             </div>
-            <div class="post-count">
-              <%= Like.where(post_id: post.id).count %>
+           </div>
+        </div>
+      <% end %>
+    <% else %>
+      <% @all_ranks.each do |post| %>
+        <div class="posts-index-item">
+          <div class="post-left">
+            <img src="<%= "/user_images/#{post.user.image_name}" %>">
+          </div>
+          <div class="post-right">
+            <div class="post-user-name">
+              <%= post.user.name %>
+            </div>
+            <div class="post-user-content">
+              <%= simple_format(post.content) %>
+            </div>
+            <div class="post-index-bottom">
+              <div class="post-icon">
+                <% Like.find_by(post_id: post.id) %>
+                <span class="fa fa-heart like-btn-unlike"></span>
+              </div>
+              <div class="post-count">
+                <%= Like.where(post_id: post.id).count %>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      <% end %>
     <% end %>
   </div>
 </div>
