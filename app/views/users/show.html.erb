@@ -27,11 +27,9 @@
 
       <li class="active"><%= link_to("投稿", "/users/#{@user.id}")%></li>
       <li><%= link_to("いいね!", "/users/#{@user.id}/likes") %></li>
-
-      <!-- <li><%= link_to("フォロー", "/users/#{@user.id}/likes") %></li> -->
-      <!-- <li><%= link_to("フォロワー", "/users/#{@user.id}/likes") %></li> -->
+      <li><%= link_to("フォロー", "/users/#{@user.id}/follows") %></li>
+      <li><%= link_to("フォロワー", "/users/#{@user.id}/followers") %></li>
     </div>
-
 
     <% @user.posts.each do |post| %>
       <div class="posts-index-item">

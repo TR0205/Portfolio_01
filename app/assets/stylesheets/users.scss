@@ -97,6 +97,7 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  white-space: nowrap;
 }
 
 .tabs {
@@ -105,7 +106,7 @@
 }
 
 .tabs li {
-  display: block;
+  margin: 10px;
 }
 
 .tabs li:hover {
