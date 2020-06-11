@@ -89,7 +89,7 @@
 }
 
 .post-left {
-  width: 20%;
+  width: 50px;
   margin: 5px;
 }
 
@@ -114,6 +114,14 @@
 .post-user-name {
   font-weight: bold;
   margin-bottom: 5px;
+}
+
+.post-index-bottom {
+  display: flex;
+}
+
+.post-like {
+  margin: 5px;
 }
 
 /* posts/show */
