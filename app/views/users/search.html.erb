@@ -1,17 +1,14 @@
 <h2 class="main-logo">ユーザー検索</h2>
-
 <div class="search-tabs">
-  <div class="tabs">
-    <li><%= link_to("投稿検索", "/posts/search") %></li>
-    <li class="active"><%= link_to("ユーザー検索", "/users/search")%></li>
-  </div>
+  <li><%= link_to("投稿検索", "/posts/search") %></li>
+  <li class="active"><%= link_to("ユーザー検索", "/users/search")%></li>
 </div>
-
-<%= form_tag "/users/search", :method => 'get' do %>
-  <%= text_field_tag :search %>
-  <%= submit_tag 'Search', :name => nil %>
-<% end %>
-
+<div class="post_user_search">
+  <%= form_tag "/users/search", :method => 'get' do %>
+    <%= text_field_tag :search, '', class: "search-form" %>
+    <%= submit_tag 'Search', :name => nil, class: "search-button" %>
+  <% end %>
+</div>
 <div class="main users-index">
   <div class="container">
     <% @users.each do |user| %>

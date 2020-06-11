@@ -218,6 +218,7 @@
 
 .search-tabs {
   display: flex;
+  justify-content: center;
 }
 
 .search-tabs a {
@@ -231,3 +232,22 @@
   font-weight: bold;
 }
 
+.post_user_search {
+  text-align: center;
+  height: 40px;
+  border-bottom: 1px solid black;
+}
+
+.search-form {
+  border-radius: 0.3rem;
+  background-color: rgb(212, 182, 164);
+}
+
+.search-button {
+  width: 90px;
+  border-radius: 20px;
+  background-color: rgb(212, 182, 164);
+  font-size: 15px;
+  text-align: center;
+  cursor: pointer;
+}

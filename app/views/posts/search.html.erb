@@ -3,10 +3,12 @@
   <li class="active"><%= link_to("投稿検索", "/posts/search")%></li>
   <li><%= link_to("ユーザー検索", "/users/search") %></li>
 </div>
-<%= form_tag "/posts/search", :method => 'get' do %>
-  <%= text_field_tag :search %>
-  <%= submit_tag 'Search', :name => nil %>
-<% end %>
+<div class="post_user_search">
+  <%= form_tag "/posts/search", :method => 'get' do %>
+    <%= text_field_tag :search, '', class: "search-form" %>
+    <%= submit_tag 'Search', :name => nil, class: "search-button" %>
+  <% end %>
+</div>
 <div class="main posts-index">
   <div class="container">
     <% @posts.each do |post| %>
