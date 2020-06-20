@@ -8,6 +8,7 @@ ja:
       user:
         name: ユーザー名
         email: メールアドレス
+        user_text: 紹介文
   date:
     abbr_day_names:
     - 日

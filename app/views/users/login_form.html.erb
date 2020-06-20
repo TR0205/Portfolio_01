@@ -1,22 +1,24 @@
 <h1 class="main-logo">ログイン</h1>
 <div class="main users-login">
   <%= form_tag("/login") do %>
-  <div class="container">
-    <div class="form-top">
-      <% if @error_message %>
-        <div class="form-error">
-          <%= @error_message %>
-        </div>
-      <% end %>
-    </div>
-    <div class="users-login-body">
+    <div class="container">
+      <div class="form-top">
+        <% if @error_message %>
+          <div class="form-error">
+            <%= @error_message %>
+          </div>
+        <% end %>
+      </div>
+      <div class="users-login-body">
         <input name="email" value="<%= @email %>" placeholder="メールアドレス">
         <input type="password" name="password" value="<%= @password %>" placeholder="パスワード">
+      </div>
+      <div class="users-login-bottom">
+        <input class="users-login-button "type="submit" value="ログイン">
+      </div>
+      <div class="guest-login">
+        <%= link_to 'ゲストログインはこちら', users_guest_signin_path, method: :post %>
+      </div>
     </div>
-    <div class="users-login-bottom">
-      <input class="button "type="submit" value="ログイン">
-    </div>
-  </div>
   <% end %>
 </div>
-<%= link_to 'ゲストログイン（閲覧用）', users_guest_signin_path, method: :post %>
