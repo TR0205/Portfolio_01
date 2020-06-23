@@ -82,7 +82,3 @@ gem 'binding_of_caller'
 #エラーメッセージ日本語化
 gem 'rails-i18n'
 
-#herokuでPostgreSQL(pg)を使用
-group :production do
-  gem 'pg'
-end
