@@ -7,6 +7,7 @@
 # server "example.com", user: "deploy", roles: %w{app web}, other_property: :other_value
 # server "db.example.com", user: "deploy", roles: %w{db}
 server '54.150.205.134', user: 'tsushima', roles: %w{app db web}
+set :ssh_options, keys: '~/.ssh/key-Exposer.pem'
 
 
 
