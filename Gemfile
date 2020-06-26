@@ -82,6 +82,4 @@ gem 'binding_of_caller'
 #エラーメッセージ日本語化
 gem 'rails-i18n'
 
-group :production do
-  gem 'pg'
-end
+
