@@ -89,3 +89,6 @@ gem 'rails-i18n'
 group :production, :staging do
   gem 'unicorn'
 end
+
+#環境変数
+gem 'dotenv-rails'
