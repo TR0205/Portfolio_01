@@ -22,12 +22,7 @@ test:
 
 production:
   <<: *default
-  adapter: mysql2
-  encoding: utf8
-  reconnect: false
-  pool: 5
-  username: <%= ENV['RDS_USERNAME'] %>
-  password: <%= ENV['RDS_PASSWORD'] %>
-  host: <%= ENV['RDS_HOSTNAME'] %>
-  database: <%= ENV['RDS_DB_NAME'] %>
-  port: <%= ENV['RDS_PORT'] %>
+  database: <%= ENV['DB_NAME'] %>
+  username: <%= ENV['DB_USERNAME'] %>
+  password: <%= ENV['DB_PASSWORD'] %>
+  host: <%= ENV['DB_HOSTNAME'] %>
