@@ -93,4 +93,4 @@ end
 #環境変数
 gem 'dotenv-rails'
 
-gem 'pg'
+gem 'pg', '>= 1.2.3'
