@@ -1,9 +1,11 @@
+# frozen_string_literal: true
+
 class Post < ApplicationRecord
-  validates :content, {presence: true, length: {maximum: 140}}
-  validates :user_id, {presence: true}
+  validates :content, { presence: true, length: { maximum: 140 } }
+  validates :user_id, { presence: true }
 
   def user
-    return User.find_by(id: self.user_id)
+    User.find_by(id: user_id)
   end
 
   def self.search(search)

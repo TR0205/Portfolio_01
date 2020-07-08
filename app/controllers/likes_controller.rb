@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class LikesController < ApplicationController
   before_action :authenticate_user
 
@@ -25,7 +27,7 @@ class LikesController < ApplicationController
       post_id: params[:post_id]
     )
     @like.save
-    redirect_to("/")
+    redirect_to('/')
   end
 
   def destroy_index
@@ -34,6 +36,6 @@ class LikesController < ApplicationController
       post_id: params[:post_id]
     )
     @like.destroy
-    redirect_to("/")
+    redirect_to('/')
   end
 end

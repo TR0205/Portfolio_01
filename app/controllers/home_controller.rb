@@ -1,10 +1,11 @@
-class HomeController < ApplicationController
-  before_action :forbid_login_user, {only: [:top]}
+# frozen_string_literal: true
 
-  def top
-  end
+class HomeController < ApplicationController
+  before_action :forbid_login_user, { only: [:top] }
+
+  def top; end
 
   def about
-    render :layout => "about_exposer"
+    render layout: 'about_exposer'
   end
 end

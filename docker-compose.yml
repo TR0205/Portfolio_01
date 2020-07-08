@@ -1,0 +1,28 @@
+version: '3'
+volumes:
+  postgres_data:
+  public_data:
+  tmp_data:
+  log_data:
+services:
+  app:
+    build:
+      context: .
+      dockerfile: ./Docker/app/Dockerfile
+    command: bundle exec puma -C config/puma.rb
+    volumes:
+      - .:/Exposer
+      - public_data:/Exposer/public
+      - tmp_data:/Exposer/tmp
+      - log_data:/Exposer/log
+    depends_on:
+      - web
+  web:
+    build:
+      context: .
+      dockerfile: ./Docker/web/Dockerfile
+    volumes:
+      - public_data:/Exposer/public
+      - tmp_data:/Exposer/tmp
+    ports:
+      - 80:80

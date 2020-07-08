@@ -1,5 +1,6 @@
-class ApplicationController < ActionController::Base
+# frozen_string_literal: true
 
+class ApplicationController < ActionController::Base
   before_action :set_current_user
   before_action :set_all_ranks
 
@@ -12,16 +13,16 @@ class ApplicationController < ActionController::Base
   end
 
   def authenticate_user
-    if @current_user == nil
-      flash[:notice] = "ログインが必要です"
-      redirect_to("/login")
+    if @current_user.nil?
+      flash[:notice] = 'ログインが必要です'
+      redirect_to('/login')
     end
   end
 
   def forbid_login_user
     if @current_user
       flash[:notice]
-      redirect_to("/posts/index")
+      redirect_to('/posts/index')
     end
   end
 end

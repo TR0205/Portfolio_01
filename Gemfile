@@ -44,6 +44,8 @@ group :development, :test do
   gem 'capistrano-bundler'
   gem 'capistrano-rails'
   gem 'capistrano-rbenv'
+  gem 'rspec-rails'
+  gem 'rubocop'
 end
 
 group :development do
