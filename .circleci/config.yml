@@ -6,12 +6,12 @@ jobs:
   rubocop:
     docker:
       - image: circleci/ruby:2.6.5-stretch-node
-        environment:
-          RAILS_ENV: test
+          environment:
+            RAILS_ENV: test
       - image: tkuchiki/delayed-mysql
-        environment:
-          - MYSQL_ALLOW_EMPTY_PASSWORD: 'true'
-          - MYSQL_ROOT_HOST: '%'
+          environment:
+            - MYSQL_ALLOW_EMPTY_PASSWORD: 'true'
+            - MYSQL_ROOT_HOST: '%'
           #MYSQL_ALLOW_EMPTY_PASSWORD: yes
           #MYSQL_ROOT_PASSWORD: ''
           #MYSQL_DATABASE: ci_db_exposer
