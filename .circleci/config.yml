@@ -1,6 +1,6 @@
 version: 2.1
 orbs:
-  ruby: circleci/ruby@0.1.2 
+  ruby: circleci/ruby@0.1.2
 
 jobs:
   rubocop:
@@ -10,9 +10,11 @@ jobs:
           RAILS_ENV: test
       - image: tkuchiki/delayed-mysql
         environment:
-          MYSQL_ALLOW_EMPTY_PASSWORD: yes
-          MYSQL_ROOT_PASSWORD: ''
-          MYSQL_DATABASE: ci_db_exposer
+          - MYSQL_ALLOW_EMPTY_PASSWORD: 'true'
+          - MYSQL_ROOT_HOST: '%'
+          #MYSQL_ALLOW_EMPTY_PASSWORD: yes
+          #MYSQL_ROOT_PASSWORD: ''
+          #MYSQL_DATABASE: ci_db_exposer
     working_directory: ~/repo
     steps:
       - checkout
