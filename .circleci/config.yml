@@ -5,7 +5,7 @@ jobs:
       - image: circleci/ruby:2.6.5-stretch-node
         environment:
           RAILS_ENV: test
-      - image: tkuchiki/delayed-mysql
+      - image: circleci/mysql:8.0.19
         environment:
           - MYSQL_ALLOW_EMPTY_PASSWORD: 'true'
           - MYSQL_ROOT_HOST: '%'
