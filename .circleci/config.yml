@@ -12,7 +12,8 @@ jobs:
           DB_USERNAME: 'root'
           DB_PASSWORD: ''
     working_directory: ~/repo
-
+    steps:
+      - checkout
 
 workflows:
   version: 2
