@@ -1,35 +1,40 @@
 AllCops:
-  Exclude:
-    - "tmp/**/*"
-    - "config/initializers/*"
-    - "vendor/**/*"
-    - "db/schema.rb"
-    - "node_modules/**/*"
-    - "db/migrate/*.rb"
-    - "bin/*"
-  DisplayCopNames: true
   TargetRubyVersion: 2.6.5
-
-Rails:
-  Enabled: true
-
-Style/AndOr:
-  EnforcedStyle: conditionals
-
+  Exclude:
+    - "db/**/*"
+    - "config/**/*"
+    - "script/**/*"
+    - ".git/**/*"
+    - "public/**/*"
+    - "log/**/*"
+    - "tmp/**/*"
+    - "test/**/*"
+    - "spec/**/*"
+    - "node_modules/**/*"
+    - "bin/**"
+    - "Gemfile"
+    - "Rakefile"
+    - "app/channels/**/*"
+    - "vendor/**/*"
+Layout/IndentationWidth:
+  Enabled: false
+Style/FrozenStringLiteralComment:
+  Enabled: false
+# 日本語のコメントアウトを許可する
 Style/AsciiComments:
   Enabled: false
-
+# クラスを継承する前にコメントを書く必要はない
 Style/Documentation:
   Enabled: false
-
-Style/NumericLiterals:
+Layout/LineLength:
   Enabled: false
-
 Style/ClassAndModuleChildren:
   Enabled: false
-
-Bundler/OrderedGems:
+Metrics/AbcSize:
   Enabled: false
-
-Lint/ShadowedException:
+Style/MutableConstant:
+  Enabled: false
+StringLiterals:
+  EnforcedStyle: single_quotes
+Metrics/MethodLength:
   Enabled: false
