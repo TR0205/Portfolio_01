@@ -26,3 +26,6 @@ Style/Documentation:
 
 Style/GuardClause:
   MinBodyLength: 5
+
+Metrics/ClassLength:
+  Max: 200
