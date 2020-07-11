@@ -1,11 +1,35 @@
-require:
-  - rubocop-rails
-Rails:
-  Enabled: true
 AllCops:
   Exclude:
-    - 'db/schema.rb'
-    - 'vendor/**/*'
-# 日本語でのコメントを許可
-AsciiComments:
+    - "tmp/**/*"
+    - "config/initializers/*"
+    - "vendor/**/*"
+    - "db/schema.rb"
+    - "node_modules/**/*"
+    - "db/migrate/*.rb"
+    - "bin/*"
+  DisplayCopNames: true
+  TargetRubyVersion: 2.6.5
+
+Rails:
+  Enabled: true
+
+Style/AndOr:
+  EnforcedStyle: conditionals
+
+Style/AsciiComments:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Style/NumericLiterals:
+  Enabled: false
+
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+Bundler/OrderedGems:
+  Enabled: false
+
+Lint/ShadowedException:
   Enabled: false
