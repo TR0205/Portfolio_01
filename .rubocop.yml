@@ -20,3 +20,6 @@ AllCops:
 # 日本語のコメントアウトを許可する
 Style/AsciiComments:
   Enabled: false
+
+Style/Documentation:
+  Enabled: false
