@@ -44,3 +44,6 @@ Metrics/LineLength:
 #循環的複雑度のチェック
 CyclomaticComplexity:
   Enabled: false
+
+Metrics/AbcSize:
+  Max: 40
