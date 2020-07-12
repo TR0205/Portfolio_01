@@ -25,14 +25,22 @@ Style/AsciiComments:
 Style/Documentation:
   Enabled: false
 
+#ガード節の使用をチェック
 Style/GuardClause:
   MinBodyLength: 5
 
+#クラス名の長さ
 Metrics/ClassLength:
   Max: 200
 
+#メソッドの長さ
 Metrics/MethodLength:
   Max: 30
 
-Metrics/AbcSize:
-  Max: 20
+#行数
+Metrics/LineLength:
+  Enabled: false
+
+#循環的複雑度のチェック
+CyclomaticComplexity:
+  Enabled: false
