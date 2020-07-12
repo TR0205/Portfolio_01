@@ -16,6 +16,7 @@ AllCops:
     - "Rakefile"
     - "app/channels/**/*"
     - "vendor/**/*"
+    - "cap-exposer/**/*"
 
 # 日本語のコメントアウトを許可する
 Style/AsciiComments:
