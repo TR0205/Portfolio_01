@@ -33,4 +33,3 @@
 # Ignore Byebug command history file.
 
 /.env
-/config/database.yml
