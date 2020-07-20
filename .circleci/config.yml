@@ -41,17 +41,35 @@ workflows:
   rubocop_rspec:
     jobs:
       - rubocop:
+
+  # nginxのデプロイ
+  nginx-deploy:
+    jobs:
       - aws-ecr/build-and-push-image:
-          requires:
-            - rubocop
           account-url: "${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com"
-          repo: "${AWS_RESOURCE_NAME_PREFIX}"
+          repo: "${AWS_RESOURCE_NAME_PREFIX_WEB}"
           region: ${AWS_DEFAULT_REGION}
           tag: "${CIRCLE_SHA1}"
       - aws-ecs/deploy-service-update:
         requires:
           - aws-ecr/build-and-push-image
         aws-region: ${AWS_DEFAULT_REGION}
-        family: "${AWS_RESOURCE_NAME_PREFIX}-service"
-        cluster-name: "${AWS_RESOURCE_NAME_PREFIX}-cluster"
-        container-image-name-updates: "container=${AWS_RESOURCE_NAME_PREFIX}-service,tag=${CIRCLE_SHA1}"
+        family: "${AWS_RESOURCE_NAME_PREFIX_WEB}-service"
+        cluster-name: "${AWS_RESOURCE_NAME_PREFIX_WEB}-cluster"
+        container-image-name-updates: "container=${AWS_RESOURCE_NAME_PREFIX_WEB}-service,tag=${CIRCLE_SHA1}"
+
+  # Railsのデプロイ
+  rails-deploy:
+    jobs:
+      - aws-ecr/build-and-push-image:
+          account-url: "${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com"
+          repo: "${AWS_RESOURCE_NAME_PREFIX_APP}"
+          region: ${AWS_DEFAULT_REGION}
+          tag: "${CIRCLE_SHA1}"
+      - aws-ecs/deploy-service-update:
+        requires:
+          - aws-ecr/build-and-push-image
+        aws-region: ${AWS_DEFAULT_REGION}
+        family: "${AWS_RESOURCE_NAME_PREFIX_APP}-service"
+        cluster-name: "${AWS_RESOURCE_NAME_PREFIX_APP}-cluster"
+        container-image-name-updates: "container=${AWS_RESOURCE_NAME_PREFIX_APP}-service,tag=${CIRCLE_SHA1}"
