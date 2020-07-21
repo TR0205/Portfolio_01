@@ -20,3 +20,4 @@ RUN apk update && \
     apk del build-packages
 COPY . $RAILS_ROOT
 RUN mkdir -p tmp/sockets
+RUN mkdir -p tmp/pid
