@@ -31,5 +31,5 @@
 /config/master.key
 
 # Ignore Byebug command history file.
-/credentials.yml.enc
+/config/credentials.yml.enc
 /.env
