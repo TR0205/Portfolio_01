@@ -40,7 +40,7 @@ workflows:
   version: 2
   rubocop_rspec:
     jobs:
-      - rubocop:
+      - rubocop
 
   # nginxのデプロイ
   nginx-deploy:
