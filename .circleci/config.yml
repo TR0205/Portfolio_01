@@ -46,9 +46,9 @@ workflows:
   nginx-deploy:
     jobs:
       - aws-ecr/build-and-push-image:
-          account-url: "${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com"
-          repo: "${AWS_RESOURCE_NAME_PREFIX_WEB}"
-          region: ${AWS_DEFAULT_REGION}
+          account-url: AWS_ECR_ACCOUNT_URL
+          repo: repo-web
+          region: AWS_DEFAULT_REGION
           aws-access-key-id: AWS_ACCESS_KEY_ID
           aws-secret-access-key: AWS_SECRET_ACCESS_KEY
           dockerfile: ./docker/nginx/Dockerfile
@@ -56,23 +56,23 @@ workflows:
       - aws-ecs/deploy-service-update:
           requires:
             - aws-ecr/build-and-push-image
-          aws-region: ${AWS_DEFAULT_REGION}
-          family: "${AWS_RESOURCE_NAME_PREFIX_WEB}-service"
-          cluster-name: "${AWS_RESOURCE_NAME_PREFIX_WEB}-cluster"
-          container-image-name-updates: "container=${AWS_RESOURCE_NAME_PREFIX_WEB}-service,tag=${CIRCLE_SHA1}"
+            family: '${ECS_TASK}'
+            family: "${AWS_RESOURCE_NAME_PREFIX_WEB}-service"
+            cluster-name: "${AWS_RESOURCE_NAME_PREFIX_WEB}-cluster"
+            container-image-name-updates: "container=${AWS_RESOURCE_NAME_PREFIX_WEB}-service,tag=${CIRCLE_SHA1}"
 
   # Railsのデプロイ
   rails-deploy:
     jobs:
       - aws-ecr/build-and-push-image:
-          account-url: "${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com"
-          repo: "${AWS_RESOURCE_NAME_PREFIX_APP}"
-          region: ${AWS_DEFAULT_REGION}
+          account-url: AWS_ECR_ACCOUNT_URL
+          repo: repo-app
+          region: AWS_DEFAULT_REGION
           tag: "${CIRCLE_SHA1}"
       - aws-ecs/deploy-service-update:
           requires:
             - aws-ecr/build-and-push-image
-          aws-region: ${AWS_DEFAULT_REGION}
+          region: AWS_DEFAULT_REGION
           family: "${AWS_RESOURCE_NAME_PREFIX_APP}-service"
           cluster-name: "${AWS_RESOURCE_NAME_PREFIX_APP}-cluster"
           container-image-name-updates: "container=${AWS_RESOURCE_NAME_PREFIX_APP}-service,tag=${CIRCLE_SHA1}"
