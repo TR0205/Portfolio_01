@@ -61,7 +61,7 @@ workflows:
           family: '${ECS_TASK}'
           cluster-name: '${ECS_ARN}'
           service-name: '${ECS_SERVICE}'
-          container-image-name-updates: "container=${AWS_RESOURCE_NAME_PREFIX_WEB}-service,tag=${CIRCLE_SHA1}"
+          container-image-name-updates: "container=nginx,tag=${CIRCLE_SHA1}"
   # Railsのデプロイ
   rails-deploy:
     jobs:
@@ -82,4 +82,4 @@ workflows:
           family: '${ECS_TASK}'
           cluster-name: '${ECS_ARN}'
           service-name: '${ECS_SERVICE}'
-          container-image-name-updates: "container=${AWS_RESOURCE_NAME_PREFIX_APP}-service,tag=${CIRCLE_SHA1}"
+          container-image-name-updates: "container=rails,tag=${CIRCLE_SHA1}"
