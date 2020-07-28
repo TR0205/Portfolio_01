@@ -41,7 +41,6 @@ workflows:
   rubocop_rspec:
     jobs:
       - rubocop
-
   # nginxのデプロイ
   nginx-deploy:
     jobs:
