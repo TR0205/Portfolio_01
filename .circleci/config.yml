@@ -51,7 +51,7 @@ workflows:
               only: master
           account-url: AWS_ECR_ACCOUNT_URL
           region: AWS_DEFAULT_REGION
-          aws-access-key-id: $AWS_ACCESS_KEY_ID
+          aws-access-key-id: ${AWS_ACCESS_KEY_ID}
           aws-secret-access-key: AWS_SECRET_ACCESS_KEY
           dockerfile: ./nginx/Dockerfile
           repo: repo-web
@@ -72,7 +72,7 @@ workflows:
               only: master
           account-url: AWS_ECR_ACCOUNT_URL
           region: AWS_DEFAULT_REGION
-          aws-access-key-id: $AWS_ACCESS_KEY_ID
+          aws-access-key-id: ${AWS_ACCESS_KEY_ID}
           aws-secret-access-key: AWS_SECRET_ACCESS_KEY
           dockerfile: ./Dockerfile
           repo: repo-app
