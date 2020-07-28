@@ -46,12 +46,15 @@ workflows:
   nginx-deploy:
     jobs:
       - aws-ecr/build-and-push-image:
+          filters:
+            branches:
+              only: master
           account-url: AWS_ECR_ACCOUNT_URL
-          repo: repo-web
           region: AWS_DEFAULT_REGION
           aws-access-key-id: AWS_ACCESS_KEY_ID
           aws-secret-access-key: AWS_SECRET_ACCESS_KEY
-          dockerfile: ./docker/nginx/Dockerfile
+          dockerfile: ./nginx/Dockerfile
+          repo: repo-web
           tag: "${CIRCLE_SHA1}"
       - aws-ecs/deploy-service-update:
           requires:
@@ -64,11 +67,15 @@ workflows:
   rails-deploy:
     jobs:
       - aws-ecr/build-and-push-image:
+          filters:
+            branches:
+              only: master
           account-url: AWS_ECR_ACCOUNT_URL
-          repo: repo-app
           region: AWS_DEFAULT_REGION
           aws-access-key-id: AWS_ACCESS_KEY_ID
           aws-secret-access-key: AWS_SECRET_ACCESS_KEY
+          dockerfile: ./Dockerfile
+          repo: repo-app
           tag: "${CIRCLE_SHA1}"
       - aws-ecs/deploy-service-update:
           requires:
