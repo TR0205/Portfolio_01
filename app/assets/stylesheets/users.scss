@@ -240,3 +240,32 @@
 .guest-login a:hover {
   font-weight: bold;
 }
+
+/* users/new  ================================ */
+
+.users-new-body input {
+  width: 100%;
+  border: none;
+  border-radius: 0.3rem;
+  background-color: rgb(212, 182, 164);
+  margin-bottom: 20px;
+}
+
+.users-new-bottom {
+  position: relative;
+  min-height: 30px;
+  margin: 10px;
+}
+
+.user-new-button {
+  width: 90px;
+  border-radius: 20px;
+  background-color: rgb(212, 182, 164);
+  font-size: 15px;
+  text-align: center;
+  cursor: pointer;
+  position: absolute;
+  right: 10px;
+  bottom: 15px;
+}
+
