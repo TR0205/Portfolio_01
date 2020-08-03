@@ -21,3 +21,4 @@ RUN apk update && \
 COPY . $RAILS_ROOT
 RUN mkdir -p tmp/sockets
 RUN mkdir -p tmp/pid
+EXPOSE 3000
