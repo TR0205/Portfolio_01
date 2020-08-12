@@ -1,2 +1,2 @@
-GRANT ALL PRIVILEGES ON *.* TO 'tsushima'@'%';
+GRANT ALL PRIVILEGES ON *.* TO 'root'@'%';
 FLUSH PRIVILEGES;
