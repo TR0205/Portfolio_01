@@ -12,6 +12,8 @@ services:
       - log_data:/Exposer/log
     depends_on:
       - db
+    environment:
+      RAILS_ENV: production
   db:
     image: mysql:8.0.19
     ports:
