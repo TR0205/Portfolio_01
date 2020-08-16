@@ -51,7 +51,7 @@ class UsersController < ApplicationController
       File.binwrite("public/user_images/#{@user.image_name}", image.read)
     end
 
-    if @user.user_text.nil?
+    if @user.user_text = nil
       @user = User.new(
         user_text: params[:user_text]
       )

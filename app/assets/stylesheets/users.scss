@@ -13,13 +13,12 @@
   text-decoration: underline;
 }
 
-.users-index-item a {
+.users-index-item a,p {
   text-decoration: none;
   color: black;
 }
 
 .users-index-left {
-  width: 70px;
   margin-right: 10px;
 }
 
@@ -31,9 +30,34 @@
   object-fit: cover;
 }
 
+.users-index-right {
+  margin: 5px;
+}
+
 .users-index-text {
   min-height: 20px;
   margin: 5px 0px;
+}
+
+.users-index-name {
+  margin: 0 0 10px 0;
+}
+
+.user-follow {
+  width: 100px;
+  border-radius: 20px;
+  background-color: rgba(247, 225, 155,1);
+  font-size: 15px;
+  text-align: center;
+  cursor: pointer;
+  margin-left: 70%;
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
+}
+
+.user-follow:hover {
+  font-weight: bold;
 }
 
 /* users/show ================================ */
