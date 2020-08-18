@@ -1,5 +1,7 @@
 {
   "name": "Exposer",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "modern-css-reset": "^1.1.1"
+  }
 }
