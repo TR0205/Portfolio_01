@@ -77,8 +77,8 @@ gem 'bcrypt'
 #ページネーション
 gem 'kaminari'
 
-gem 'will_paginate',           '3.1.6'
-gem 'bootstrap-will_paginate', '1.0.0'
+gem 'will_paginate',           '3.1.7'
+gem 'will_paginate-bootstrap4'
 
 # rubocop
 gem 'rubocop', require: false
