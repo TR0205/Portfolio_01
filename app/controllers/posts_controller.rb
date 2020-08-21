@@ -4,7 +4,8 @@ class PostsController < ApplicationController
   before_action :ensure_correct_user, { only: %i[edit update destroy] }
 
   def index
-    @posts = Post.paginate(page: params[:page], per_page: 5)
+    @posts = Post.all.order(created_at: :desc)
+    @posts_page = Post.page(params[:page]).per(10)
   end
 
   def new

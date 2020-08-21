@@ -100,8 +100,3 @@ hr {
 input, select {
   vertical-align:middle;
 }
-
-/* 追加 */
-li {
-  text-align: inherit;
-}
