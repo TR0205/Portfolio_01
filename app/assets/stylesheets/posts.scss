@@ -66,6 +66,7 @@
 .posts-index {
   color: black;
   position: relative;
+  width: auto;
 }
 
 .posts-index-item {
@@ -74,7 +75,6 @@
   border-radius: 0.3rem;
   padding: 10px 10px;
   margin: 10px 0px;
-  display: flex;
   min-height: 50px;
 }
 
