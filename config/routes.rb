@@ -1,9 +1,8 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  root 'users#login'
+  root 'posts#index'
   get 'about' => 'home#about'
-
   get 'posts/search' => 'posts#search'
   get 'posts/new' => 'posts#new'
 
@@ -20,7 +19,7 @@ Rails.application.routes.draw do
   get 'signup' => 'users#new'
   get 'users/index' => 'users#index'
   get 'users/:id' => 'users#show'
-  #post 'login' => 'users#login'
+  post 'login' => 'users#login'
   post 'logout' => 'users#logout'
   get 'login' => 'users#login_form'
   post 'users/guest_signin' => 'users#new_guest'

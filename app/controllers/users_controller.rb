@@ -30,7 +30,7 @@ class UsersController < ApplicationController
     if @user.save
       flash[:notice] = '新規登録が完了しました'
       session[:user_id] = @user.id
-      redirect_to('/posts/index')
+      redirect_to('/')
     else
       render('users/new')
     end
@@ -72,7 +72,7 @@ class UsersController < ApplicationController
     if @user&.authenticate(params[:password])
       session[:user_id] = @user.id
       flash[:notice] = 'ログインしました'
-      redirect_to('/posts/index')
+      redirect_to('/')
     else
       @error_message = 'メールアドレスまたはパスワードが間違っています'
       @email = params[:email]
@@ -107,13 +107,13 @@ class UsersController < ApplicationController
       new_guest.password = SecureRandom.urlsafe_base64
     end
     session[:user_id] = user.id
-    redirect_to('/posts/index')
+    redirect_to('/')
   end
 
   def check_guest
     user = User.find_by(id: params[:id])
     if user.email == 'guest@example.com'
-      redirect_to('/posts/index')
+      redirect_to('/')
       flash[:notice] = 'ゲストユーザーの編集はできません'
     end
   end
