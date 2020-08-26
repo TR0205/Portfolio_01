@@ -21,7 +21,7 @@ Rails.application.routes.draw do
   get 'users/index' => 'users#index'
   get 'users/:id' => 'users#show'
   post 'login' => 'users#login'
-  post 'logout' => 'users#logout'
+  get 'logout' => 'users#logout'
   get 'login' => 'users#login_form'
   post 'users/guest_signin' => 'users#new_guest'
 
