@@ -3,6 +3,7 @@
 Rails.application.routes.draw do
   root 'posts#index'
   get 'about' => 'home#about'
+
   get 'posts/search' => 'posts#search'
   get 'posts/new' => 'posts#new'
 

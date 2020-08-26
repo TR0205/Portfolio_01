@@ -77,9 +77,6 @@ gem 'bcrypt'
 #ページネーション
 gem 'kaminari'
 
-gem 'will_paginate','3.1.7'
-gem 'will_paginate-bootstrap4'
-
 # rubocop
 gem 'rubocop', require: false
 
@@ -97,3 +94,4 @@ end
 #環境変数
 gem 'dotenv-rails'
 
+gem 'jquery-rails'
