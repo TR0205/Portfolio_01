@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   post 'posts/create' => 'posts＃create'
   get 'posts/:id/edit' => 'posts#edit'
   post 'posts/:id/update' => 'posts#update'
-  post 'posts/:id/destroy' => 'posts#destroy'
+  get 'posts/:id/destroy' => 'posts#destroy'
 
   get 'users/search' => 'users#search'
   post 'users/:id/update' => 'users#update'
@@ -23,7 +23,7 @@ Rails.application.routes.draw do
   post 'login' => 'users#login'
   get 'logout' => 'users#logout'
   get 'login' => 'users#login_form'
-  post 'users/guest_signin' => 'users#new_guest'
+  get 'users/guest_signin' => 'users#new_guest'
 
   post 'likes/:post_id/create' => 'likes#create'
   post 'likes/:post_id/destroy' => 'likes#destroy'

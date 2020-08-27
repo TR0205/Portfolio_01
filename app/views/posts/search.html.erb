@@ -26,11 +26,11 @@
           <div class="post-index-bottom">
             <div class="post-icon">
               <% if Like.find_by(user_id: @current_user.id, post_id: post.id) %>
-                <%= link_to("/likes/#{post.id}/destroy_index", {method: "post"}) do %>
+                <%= link_to("/likes/#{post.id}/destroy_index") do %>
                 <span class="fa fa-heart like-btn-unlike"></span>
                 <% end %>
               <% else %>
-                <%= link_to("/likes/#{post.id}/create_index", {method: "post"}) do %>
+                <%= link_to("/likes/#{post.id}/create_index") do %>
                 <span class="fa fa-heart like-btn"></span>
                 <% end %>
               <% end %>
