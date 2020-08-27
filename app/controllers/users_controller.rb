@@ -102,7 +102,8 @@ class UsersController < ApplicationController
   def new_guest
     user = User.find_or_create_by!(
       email: 'guest@example.com',
-      name: 'example_user'
+      name: 'example_user',
+      image_name: 'default_user.jpg'
     ) do |new_guest|
       new_guest.password = SecureRandom.urlsafe_base64
     end

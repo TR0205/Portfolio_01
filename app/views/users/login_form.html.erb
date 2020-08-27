@@ -16,9 +16,11 @@
       <div class="users-login-bottom">
         <input class="users-login-button "type="submit" value="ログイン">
       </div>
-      <div class="guest-login">
-        <%= link_to 'ゲストログインはこちら', users_guest_signin_path%>
-      </div>
+
     </div>
   <% end %>
+  <div class="guest-login">
+    <%= link_to 'ゲストログインはこちら', users_guest_signin_path %>
+    <!-- <%= link_to("テスト", "/users/guest_signin") %> -->
+  </div>
 </div>
