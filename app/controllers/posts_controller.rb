@@ -24,7 +24,7 @@ class PostsController < ApplicationController
     )
     if @post.save
       flash[:notice] = '投稿が完了しました'
-      redirect_to('/')
+      redirect_to('/posts/index')
     else
       render('posts/new')
     end
