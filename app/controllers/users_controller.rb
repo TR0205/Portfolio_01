@@ -30,7 +30,7 @@ class UsersController < ApplicationController
     if @user.save
       flash[:notice] = '新規登録が完了しました'
       session[:user_id] = @user.id
-      redirect_to('/')
+      redirect_to('/posts/index')
     else
       render('users/new')
     end
