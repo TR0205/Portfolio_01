@@ -27,7 +27,7 @@ class LikesController < ApplicationController
       post_id: params[:post_id]
     )
     @like.save
-    redirect_to('/')
+    redirect_to('/posts/index')
   end
 
   def destroy_index
@@ -36,6 +36,6 @@ class LikesController < ApplicationController
       post_id: params[:post_id]
     )
     @like.destroy
-    redirect_to('/')
+    redirect_to('/posts/index')
   end
 end
