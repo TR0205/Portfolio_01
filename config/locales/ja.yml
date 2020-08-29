@@ -4,7 +4,7 @@ ja:
       post: ポスト
     attributes:
       post:
-        content: 変更内容
+        content: 投稿内容
       user:
         name: ユーザー名
         email: メールアドレス
