@@ -43,17 +43,19 @@
             <% User.find_by(id: user.id) %>
             <%= user.user_text %>
           </div>
+          <div class="user-follow">
           <% if @current_user != user %>
             <% if user.followed_by?(@current_user) %>
               <%=link_to(user_relationships_path(user.id), method: :delete) do %>
-              <span class="fas fa-check-circle"></span>
+              <p>フォロー解除</p>
               <% end %>
             <% else %>
               <%=link_to(user_relationships_path(user.id), method: :post) do %>
-              <span class="far fa-check-circle"></span>
+              <p>フォローする</p>
               <% end %>
             <% end %>
           <% end %>
+          </div>
         </div>
       </div>
     <% end %>
