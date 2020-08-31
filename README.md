@@ -19,7 +19,6 @@ https://exposer.ml
   * ALB
   * RDS
   * Route53
-  * VPC
 * Docker
 * CircleCI
 * GitHub
