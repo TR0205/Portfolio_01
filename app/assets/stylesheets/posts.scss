@@ -214,6 +214,18 @@
   white-space: pre;
 }
 
+.posts-edit-bottom {
+  width: 90px;
+  border-radius: 20px;
+  background-color: rgb(212, 182, 164);
+  font-size: 15px;
+  text-align: center;
+  cursor: pointer;
+  position: absolute;
+  right: 20px;
+  bottom: 5px;
+}
+
 /* posts/search */
 
 .search-tabs {
