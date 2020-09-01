@@ -48,7 +48,8 @@ class UsersController < ApplicationController
     if params[:image]
       @user.image_name = "#{@user.id}.jpg"
       image = params[:image]
-      File.binwrite("public/user_images/#{@user.image_name}", image.read)
+      @user.upload_file = params[:users][:upload_file].read
+      #File.binwrite("public/user_images/#{@user.image_name}", image.read)
     end
 
     if @user.user_text = nil
