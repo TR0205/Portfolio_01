@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_01_045354) do
+ActiveRecord::Schema.define(version: 2020_09_01_225904) do
 
   create_table "likes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.integer "user_id"
@@ -41,7 +41,7 @@ ActiveRecord::Schema.define(version: 2020_09_01_045354) do
     t.string "user_text"
     t.string "image_name"
     t.string "password_digest"
-    t.string "upload_file"
+    t.binary "upload_file", limit: 16777215
   end
 
 end

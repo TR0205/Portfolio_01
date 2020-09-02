@@ -3,15 +3,17 @@
 Rails.application.routes.draw do
   root 'users#login_form'
   get 'about' => 'home#about'
-  
   get 'posts/index' => 'posts#index'
   get 'posts/search' => 'posts#search'
   get 'posts/new' => 'posts#new'
+
   post 'posts/create' => 'posts＃create'
   get 'posts/:id/edit' => 'posts#edit'
   post 'posts/:id/update' => 'posts#update'
   get 'posts/:id/destroy' => 'posts#destroy'
+  patch 'posts/:id/update' => 'posts#update'
   get 'posts/:id' => 'posts#show'
+
 
 
   get 'users/search' => 'users#search'
@@ -24,7 +26,11 @@ Rails.application.routes.draw do
   get 'logout' => 'users#logout'
   get 'login' => 'users#login_form'
   get 'users/guest_signin' => 'users#new_guest'
+
+
   get 'users/:id' => 'users#show'
+  get 'users/:id/show_image' => 'users#show_image'
+
 
   get 'likes/:post_id/create' => 'likes#create'
   get 'likes/:post_id/destroy' => 'likes#destroy'

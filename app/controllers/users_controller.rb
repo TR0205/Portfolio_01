@@ -45,11 +45,15 @@ class UsersController < ApplicationController
     @user.name = params[:name]
     @user.email = params[:email]
     @user.user_text.nil?
-    if params[:image]
-      @user.image_name = "#{@user.id}.jpg"
-      image = params[:image]
-      @user.upload_file = params[:users][:upload_file].read
-      #File.binwrite("public/user_images/#{@user.image_name}", image.read)
+    #if params[:upload_file]
+      #@user.upload_file = params[:user][:upload_file].read
+    #end
+
+    if params[:upload_file]
+      upload_file = params[:upload_file]
+      if upload_file != nil
+        @user.upload_file = upload_file.read
+      end
     end
 
     if @user.user_text = nil
@@ -134,4 +138,10 @@ class UsersController < ApplicationController
   def search
     @users = User.search(params[:search])
   end
+
+  def show_image
+    @image = User.find_by(params[:id])
+    send_data @image.upload_file, :type => 'image/jpeg', :disposition => 'inline'
+  end
+
 end

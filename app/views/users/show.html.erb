@@ -4,7 +4,7 @@
     <div class="user">
       <div class="user-info">
         <div class="user-left">
-          <img src="<%= "/user_images/#{@user.image_name}" %>">
+          <%= image_tag users_guest_signin_path(@image) %>
         </div>
         <div class="user-right">
           <h2><%= @user.name %></h2>

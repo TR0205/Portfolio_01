@@ -8,43 +8,49 @@
       </div>
       <% end %>
     </div>
-<%
-=begin
-%>
+
+
     <%= form_tag("/users/#{@user.id}/update", {multipart: true}) do %>
-    <div class="users-edit-body"> %>
+    <div class="users-edit-body">
       <p>ユーザー名</p>
         <input name="name" value="<%= @user.name %>">
       <p>メールアドレス</p>
         <input name="email" value="<%= @user.email %>">
       <p>画像</p>
-        <input name="image" type="file">
+        <input name="upload_file" type="file">
       <p>紹介文</p>
         <textarea name="user_text" rows="8" cols="80"><%= @user.user_text %></textarea>
     </div>
     <div class="users-edit-bottom">
       <input class="user-edit-button" type="submit" value="保存">
     </div>
-    <% end %> %>
+    <% end %>
+
+
+<%
+=begin
+%>
+
+    <!-- 画像保存おためし -->
+    <%= form_for(@user, url: user_path, html: {method: 'PATCH'} ) do |f| %>
+      <div class="users-edit-body">
+        <p>ユーザー名</p>
+          <%= f.text_field :name , value: @user.name %>
+        <p>メールアドレス</p>
+          <%= f.text_field :email , value: @user.email %>
+        <p>紹介文</p>
+          <%= f.text_area :user_text , size: "80x8", value: @user.user_text %>
+        <p>画像</p>
+          <%= f.file_field :upload_file %>
+      </div>
+      <div class="users-edit-bottom">
+        <%= f.submit "保存", class: "user-edit-button" %>
+      </div>
+    <% end %>
 <%
 =end
 %>
-    <!-- 画像保存おためし -->
-    <%= form_for @user, url: {action: "update"} do |f| %>
-    <div class="users-edit-body">
-      <p>ユーザー名</p>
-        <%= f.text_field :name , value: @user.name %>
-      <p>メールアドレス</p>
-        <%= f.text_field :email , value: @user.email %>
-      <p>紹介文</p>
-        <%= f.text_area :user_text , size: "80x8", value: @user.user_text %>
-      <p>画像</p>
-        <%= f.file_field :upload_file %>
-    </div>
-    <div class="users-edit-bottom">
-      <%= f.submit "保存", class: "user-edit-button" %>
-    </div>
-    <% end %>
+
 
   </div>
 </div>
