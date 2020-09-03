@@ -17,6 +17,16 @@
       <div class="user-info-edit">
         <% if @user.id == @current_user.id %>
           <%= link_to("編集", "/users/#{@user.id}/edit") %>
+        <% else %>
+          <% if @user.followed_by?(@current_user) %>
+            <%=link_to(user_relationships_path(params[:id]), method: :delete) do %>
+            <p>フォロー解除</p>
+            <% end %>
+          <% else %>
+            <%=link_to(user_relationships_path(params[:id]), method: :post) do %>
+            <p>フォローする</p>
+            <% end %>
+          <% end %>
         <% end %>
       </div>
     </div>

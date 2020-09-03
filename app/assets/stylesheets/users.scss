@@ -108,13 +108,16 @@
 }
 
 .user-info-edit {
-  width: 80px;
+  width: 100px;
   border-radius: 20px;
-  background-color: rgb(212, 182, 164);
+  background-color: rgba(247, 225, 155,1);
   font-size: 15px;
   text-align: center;
   cursor: pointer;
   margin-left: 70%;
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
 }
 
 .user-info-edit:hover {
