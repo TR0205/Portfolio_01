@@ -14,7 +14,7 @@
     <% @users.each do |user| %>
       <div class="users-index-item">
         <div class="users-index-left">
-          <img src="<%= "/user_images/#{user.image_name}" %>">
+          <%= image_tag(show_image_user_path(user.id)) %>
         </div>
         <div class="users-index-right">
           <div class="users-index-name">
