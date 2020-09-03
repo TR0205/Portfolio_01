@@ -24,9 +24,17 @@ class UsersController < ApplicationController
     @user = User.new(
       name: params[:name],
       email: params[:email],
-      image_name: 'default_user.jpg',
-      password: params[:password]
+      password: params[:password],
+      upload_file: params[:upload_file]
     )
+
+    if params[:upload_file]
+      upload_file = params[:upload_file]
+      if upload_file != nil
+        @user.upload_file = upload_file.read
+      end
+    end
+
     if @user.save
       flash[:notice] = '新規登録が完了しました'
       session[:user_id] = @user.id
