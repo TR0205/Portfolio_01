@@ -4,7 +4,7 @@
     <div class="user">
       <div class="user-info">
         <div class="user-left">
-          <%= image_tag(show_image_user_path(@current_user.id)) %>
+          <%= image_tag(show_image_user_path(params[:id])) %>
         </div>
         <div class="user-right">
           <h2><%= @user.name %></h2>

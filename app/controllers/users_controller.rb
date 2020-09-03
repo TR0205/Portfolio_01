@@ -137,7 +137,7 @@ class UsersController < ApplicationController
   end
 
   def show_image
-    @image = User.find_by(id: @current_user.id)
+    @image = User.find_by(id: params[:id])
     send_data @image.upload_file, :type => 'image/jpeg', :disposition => 'inline'
   end
 
