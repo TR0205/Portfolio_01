@@ -45,9 +45,6 @@ class UsersController < ApplicationController
     @user.name = params[:name]
     @user.email = params[:email]
     @user.user_text.nil?
-    #if params[:upload_file]
-      #@user.upload_file = params[:user][:upload_file].read
-    #end
 
     if params[:upload_file]
       upload_file = params[:upload_file]
@@ -140,7 +137,7 @@ class UsersController < ApplicationController
   end
 
   def show_image
-    @image = User.find_by(params[:id])
+    @image = User.find_by(id: @current_user.id)
     send_data @image.upload_file, :type => 'image/jpeg', :disposition => 'inline'
   end
 

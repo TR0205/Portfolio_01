@@ -19,6 +19,9 @@ Rails.application.routes.draw do
   get 'users/search' => 'users#search'
   post 'users/:id/update' => 'users#update'
   get 'users/:id/edit' => 'users#edit'
+
+  #get 'users/:id/show_image' => 'users#show_image'
+
   post 'users/create' => 'users#create'
   get 'signup' => 'users#new'
   get 'users/index' => 'users#index'
@@ -27,9 +30,7 @@ Rails.application.routes.draw do
   get 'login' => 'users#login_form'
   get 'users/guest_signin' => 'users#new_guest'
 
-
   get 'users/:id' => 'users#show'
-  get 'users/:id/show_image' => 'users#show_image'
 
 
   get 'likes/:post_id/create' => 'likes#create'
@@ -44,5 +45,6 @@ Rails.application.routes.draw do
     resource :relationships, only: %i[create destroy]
     get :follows, on: :member
     get :followers, on: :member
+    get :show_image, on: :member
   end
 end

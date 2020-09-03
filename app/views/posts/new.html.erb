@@ -12,7 +12,7 @@
       <div class="form-new-body">
         <div class="form-new-left">
           <!-- <img src="<%= "/user_images/#{@current_user.image_name}" %>" alt="ユーザー画像"> -->
-          <%= image_tag(users_show_image_path(@image)) %>
+          <%= image_tag(show_image_user_path(@current_user.id)) %>
         </div>
         <div class="form-new-right">
         <textarea name="content" rows="8" ><%= @post.content %></textarea>
