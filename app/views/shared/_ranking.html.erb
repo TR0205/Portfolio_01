@@ -4,7 +4,7 @@
       <% @all_ranks.each do |post| %>
         <div class="posts-index-item">
           <div class="post-left">
-            <%= image_tag(show_image_user_path(post.id)) %>
+            <%= image_tag(show_image_user_path(post.user_id)) %>
           </div>
           <div class="post-right">
             <div class="post-user-name">
@@ -36,7 +36,7 @@
       <% @all_ranks.each do |post| %>
         <div class="posts-index-item">
           <div class="post-left">
-            <img src="<%= "/user_images/#{post.user.image_name}" %>">
+            <%= image_tag(show_image_user_path(post.user_id)) %>
           </div>
           <div class="post-right">
             <div class="post-user-name">

@@ -3,7 +3,7 @@
     <div class="posts-show-item">
       <div class="posts-show-top">
         <div class="post-user-name">
-          <img src="<%= "/user_images/#{@user.image_name}" %>" alt="ユーザー画像">
+          <%= image_tag(show_image_user_path(@post.user_id)) %>
           <%= link_to(@user.name, "/users/#{@user.id}") %>
         </div>
       </div>

@@ -147,10 +147,9 @@ class UsersController < ApplicationController
   def show_image
     if params[:id]
       @image = User.find_by(id: params[:id])
-    elsif user.id
-      @image = User.find_by(id: user.id)
-    elsif like.user_id
-      @image = User.find_by(id: like.post_id)
+    elsif like.post_id
+      @posts = Post.find_by(user_id: like.post_id)
+      @image = User.find_by(id: @posts.user_id)
     else post.id
       @image = User.find_by(id: post.id)
     end
