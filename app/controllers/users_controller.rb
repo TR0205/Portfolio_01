@@ -148,10 +148,12 @@ class UsersController < ApplicationController
     if params[:id]
       @image = User.find_by(id: params[:id])
     elsif like.post_id
-      @posts = Post.find_by(user_id: like.post_id)
-      @image = User.find_by(id: @posts.user_id)
+      post = Post.find_by(post_id: like.post_id)
+      @image = User.find_by(user_id: post.user_id)
+    elsif user.id
+      @image = User.find_by(id: user.id)
     else post.id
-      @image = User.find_by(id: post.id)
+      @image = User.find_by(id: post.user_id)
     end
     send_data @image.upload_file, :type => 'image/jpeg', :disposition => 'inline'
   end
