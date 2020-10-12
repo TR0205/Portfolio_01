@@ -34,7 +34,7 @@
       <% post = Post.find_by(id: like.post_id) %>
       <div class="posts-index-item">
       <div class="post-left">
-        <%= image_tag(show_image_user_path(like.post_id)) %>
+        <%= image_tag(show_image_user_path(like.post.user_id)) %>
       </div>
       <div class="post-right">
         <div class="post-user-name">

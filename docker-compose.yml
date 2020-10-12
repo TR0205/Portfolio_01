@@ -30,7 +30,7 @@ services:
       - public_data:/Exposer/public
       - tmp_data:/Exposer/tmp
     ports:
-      - 80:80
+      - 81:80
 volumes:
   mysql_data:
   public_data:
